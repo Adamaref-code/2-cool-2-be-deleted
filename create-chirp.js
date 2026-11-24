@@ -42,7 +42,6 @@ composeForm.addEventListener("submit", (e) => {
 	};
 	console.log(payload);
 	postChirp(payload);
-	composeForm.reset();
 });
 
 //tapping on X button in the chirp form will clear all fields and close the form,
@@ -60,8 +59,23 @@ async function postChirp(payload) {
 		});
 		if (!response.ok) throw new Error("http", response.status);
 		hideLoaderIcon();
+		composeForm.reset();
 	} catch (error) {
 		console.error(error);
+		showErrorMessage();
 	}
 	console.log(payload);
+}
+
+function showErrorMessage() {
+	showChirpForm();
+	hideLoaderIcon();
+	const error = document.createElement("p");
+	error.classList.add("error");
+	error.textContent = "Something went wrong. Please try again";
+	const divForALoader = document.querySelector(".for-a-loader");
+	divForALoader.appendChild(error);
+	setTimeout(function () {
+		divForALoader.removeChild(error);
+	}, 1500);
 }

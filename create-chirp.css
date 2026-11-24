@@ -192,7 +192,6 @@ select::picker-icon {
 	height: 20vw;
 	position: absolute;
 	top: 20%;
-	left: 40%;
 	animation-name: "spinningLoader";
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
@@ -206,4 +205,18 @@ select::picker-icon {
 	to {
 		transform: rotate(0deg);
 	}
+}
+.for-a-loader {
+	display: flex;
+	justify-content: center;
+}
+.error {
+	position: absolute;
+	bottom: 0px;
+	background-color: #ff5656;
+	border-radius: 17px;
+	color: #eddede;
+	padding: 2.7vw;
+	font-family:
+		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
 }
