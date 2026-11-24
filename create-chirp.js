@@ -42,6 +42,7 @@ composeForm.addEventListener("submit", (e) => {
 	};
 	console.log(payload);
 	postChirp(payload);
+	composeForm.reset();
 });
 
 //tapping on X button in the chirp form will clear all fields and close the form,
