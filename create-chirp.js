@@ -79,3 +79,17 @@ function showErrorMessage() {
 		divForALoader.removeChild(error);
 	}, 1500);
 }
+let avatarPreviewUrl;
+
+function updateUserPicture(event) {
+	const file = event.currentTarget.files[0];
+	if (!file) return;
+
+	if (avatarPreviewUrl) URL.revokeObjectURL(avatarPreviewUrl);
+	avatarPreviewUrl = URL.createObjectURL(file);
+	document.querySelector(".username").src = avatarPreviewUrl;
+}
+
+document
+	.querySelector("#update-username")
+	.addEventListener("change", updateUserPicture);

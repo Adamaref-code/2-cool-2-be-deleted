@@ -20,11 +20,19 @@
 						class="chirp-form__username-and-image"
 						id="chirp-form__username-and-image"
 					>
-						<image
-							class="username"
-							src="src/images/user-icon.svg"
-							alt="an image respresentig a user icon"
-						></image>
+						<label
+							><img
+								class="username"
+								src="src/images/user-icon.svg"
+								alt="an image respresentig a user icon"
+							/>
+							<input
+								id="update-username"
+								name="myImage"
+								type="file"
+								accept="image/*"
+							/>
+						</label>
 						<label class="hidden" for="author">Display name,optional</label>
 						<input id="author" name="author_name" placeholder="Your name" />
 					</div>

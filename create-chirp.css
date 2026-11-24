@@ -220,3 +220,28 @@ select::picker-icon {
 	font-family:
 		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
 }
+/*
+Hide the original input
+*/
+label input {
+	display: none;
+}
+
+/*
+The label acts as a button, so we style it accordingly
+*/
+label {
+	padding: 0;
+	background: transparent;
+	font-family:
+		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
+	color: #fff;
+	cursor: pointer;
+	/*
+  No text-selection on buttons
+  */
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
