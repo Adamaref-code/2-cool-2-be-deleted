@@ -1,0 +1,157 @@
+/* Rita works on this*/
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+.chirp-form {
+	font-family:
+		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 20%;
+	left: 13%;
+	height: fit-content;
+	width: 70vw;
+	background-color: #f8f8f8;
+	padding: 1.7vw;
+	box-shadow: 2px 0px 5px 2px rgba(33, 32, 32, 0.251);
+	border-radius: 20px;
+}
+
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@font-face {
+	font-family: "SF-Pro-Display-Regular.otf";
+	src: url(src/fonts/SF-Pro-Display-Regular.otf);
+}
+
+input,
+textarea,
+label,
+button,
+input::placeholder {
+	font-family:
+		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
+}
+.anonymous {
+	font-family:
+		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.chirp-form__top {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5vw;
+}
+
+.chirp-form__close {
+	border: none;
+	background-color: transparent;
+	font-size: 1rem;
+	color: rgba(72, 69, 69, 0.746);
+}
+
+.chirp-form__username-and-image {
+	background-color: #ebeced;
+	border-radius: 26px;
+	width: 50vw;
+	display: flex;
+	align-items: center;
+	height: 11vw;
+	gap: 3vw;
+}
+
+.username {
+	margin-left: 0;
+	height: 11vw;
+	color: red;
+}
+#author {
+	height: 10vw;
+	padding: 0;
+	margin: 0;
+	width: 20vw;
+}
+
+.cursor {
+	animation-name: "cursor-blinking";
+	animation-duration: 1s;
+}
+
+@keyframes cursor-blinking {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+input,
+textarea {
+	border: none;
+	margin: 2vw;
+	background-color: transparent;
+	resize: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+}
+
+hr {
+	border: 0.5px solid rgb(202, 197, 197);
+	width: 100%;
+}
+
+.chirp-form__tag-mood-and-post {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+}
+
+.submit_button {
+	background-color: #dee908;
+	border: none;
+	border-radius: 20px;
+	padding: 2vw;
+	width: 20vw;
+	font-size: 0.8rem;
+	color: rgb(35, 34, 34);
+}
+
+#tag {
+	width: 20vw;
+}
+
+#mood {
+	width: 26vw;
+	background-color: rgba(202, 205, 204, 0.524);
+	border: none;
+	border-radius: 20px;
+	padding: 2vw 5vw;
+	text-align: left;
+}
+select {
+	padding-right: 2vw;
+}
+
+.gray-overlay {
+	background-color: #bcbec062;
+	height: 1000vw;
+	width: 100vw;
+}
