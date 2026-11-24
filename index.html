@@ -9,6 +9,7 @@
 		<script defer src="create-chirp.js"></script>
 	</head>
 	<body>
+		<div class="for-a-loader" id="for-a-loader"></div>
 		<button id="open-chirp-form-button" class="submit_button open-chirp-form">
 			Post
 		</button>
@@ -50,7 +51,7 @@
 						>Select your mood, optional</label
 					>
 					<select placeholder="mood" id="sentiment" name="sentiment">
-						<option value="mood" disabled selected>Mood</option>
+						<option value="mood" disabled hidden selected>Mood</option>
 						<option value="Positive">positive</option>
 						<option value="Negative">negative</option>
 						<option value="Neutral">neutral</option>
