@@ -120,34 +120,49 @@ hr {
 
 .chirp-form__tag-mood-and-post {
 	display: flex;
-	justify-content: space-between;
-	gap: 10px;
+	justify-content: left;
+	gap: 0;
 }
 
 .submit_button {
+	font-size: 0.8rem;
 	background-color: #dee908;
 	border: none;
 	border-radius: 20px;
 	padding: 2vw;
 	width: 20vw;
-	font-size: 0.8rem;
 	color: rgb(35, 34, 34);
+	margin-left: 6vw;
+	font-family:
+		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #tag {
-	width: 20vw;
+	font-size: 0.8rem;
+	width: 15vw;
 }
 
-#mood {
-	width: 26vw;
-	background-color: rgba(202, 205, 204, 0.524);
+#sentiment {
+	font-size: 0.8rem;
+	width: 24vw;
+	background: #e6eef2;
+	background: linear-gradient(
+		180deg,
+		rgb(249, 249, 249) 0%,
+		rgba(223, 223, 224, 0.52) 50%,
+		rgba(184, 184, 186, 0.565) 100%
+	);
 	border: none;
 	border-radius: 20px;
 	padding: 2vw 5vw;
 	text-align: left;
 }
-select {
-	padding-right: 2vw;
+
+select,
+::picker(select) {
+	font-size: 0.8rem;
+	font-family:
+		"SF-Pro-Display-Regular.otf", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .gray-overlay {

@@ -9,8 +9,11 @@
 		<script defer src="create-chirp.js"></script>
 	</head>
 	<body>
-		<div class="gray-overlay" id="gray-overlay">
-			<form class="chirp-form" id="chirp-form">
+		<button id="open-chirp-form-button" class="submit_button open-chirp-form">
+			Post
+		</button>
+		<div class="gray-overlay hidden" id="gray-overlay">
+			<form class="chirp-form hidden" id="chirp-form">
 				<div class="chirp-form__top" id="chirp-form__top">
 					<div
 						class="chirp-form__username-and-image"
@@ -21,12 +24,14 @@
 							src="src/images/user-icon.svg"
 							alt="an image respresentig a user icon"
 						></image>
-						<label class="hidden" for="author">Display name</label>
+						<label class="hidden" for="author">Display name,optional</label>
 						<input id="author" name="author_name" placeholder="Your name" />
 					</div>
-					<button class="chirp-form__close" id="chirp-form__close">X</button>
+					<button type="reset" class="chirp-form__close" id="chirp-form__close">
+						X
+					</button>
 				</div>
-				<label class="hidden" for="message">Message</label>
+				<label class="hidden" for="message">Message, obligatory field</label>
 				<textarea
 					id="message"
 					name="content"
@@ -41,11 +46,14 @@
 				>
 					<label class="hidden" for="tag">Tag, optional</label>
 					<input id="tag" name="tag" placeholder="#tag" />
-					<label class="hidden" for="select">Select your mood</label>
-					<select id="mood" name="mood">
+					<label class="hidden" for="sentiment"
+						>Select your mood, optional</label
+					>
+					<select placeholder="mood" id="sentiment" name="sentiment">
+						<option value="mood" disabled selected>Mood</option>
 						<option value="Positive">positive</option>
 						<option value="Negative">negative</option>
-						<option value="Neutral" selected>neutral</option>
+						<option value="Neutral">neutral</option>
 						<option value="Chaotic">chaotic</option>
 					</select>
 					<button id="submit_button" class="submit_button" type="submit">
