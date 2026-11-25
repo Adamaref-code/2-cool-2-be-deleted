@@ -30,7 +30,7 @@ function hideLoaderIcon() {
 }
 
 //tapping on the Post button inside the chirp form submits the form
-composeForm.addEventListener("submit", (e) => {
+composeForm.addEventListener("submit", async (e) => {
 	e.preventDefault();
 	const data = new FormData(composeForm);
 	const payload = {
@@ -41,6 +41,12 @@ composeForm.addEventListener("submit", (e) => {
 		sentiment: data.get("sentiment")
 	};
 	console.log(payload);
+	const file = data.get("myImage");
+
+	if (file instanceof File && file.size > 0) {
+		payload.author_avatar = await uploadAvatar(file);
+	}
+	console.log(payload.author_avatar);
 	postChirp(payload);
 });
 
@@ -88,8 +94,25 @@ function updateUserPicture(event) {
 	if (avatarPreviewUrl) URL.revokeObjectURL(avatarPreviewUrl);
 	avatarPreviewUrl = URL.createObjectURL(file);
 	document.querySelector(".username").src = avatarPreviewUrl;
+	console.log(avatarPreviewUrl);
 }
 
 document
 	.querySelector("#update-username")
 	.addEventListener("change", updateUserPicture);
+
+async function uploadAvatar(file) {
+	const formData = new FormData();
+	formData.append("file", file);
+	formData.append("upload_preset", "ml_default");
+
+	const response = await fetch(
+		"https://api.cloudinary.com/v1_1/qodpduxz/image/upload",
+		{ method: "POST", body: formData }
+	);
+
+	if (!response.ok) throw new Error("Avatar upload failed");
+
+	const result = await response.json();
+	return result.secure_url;
+}
