@@ -1,38 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="./style.css" />
-
-    <script type="module" src="./script.js"></script>
-
-    <title>Hyper Chirp</title>
-</head>
-<body>
-
-    <nav class="filters">
-        <button class="filter-chip active" data-filter="all">
-            All
-        </button>
-
-        <button class="filter-chip" data-filter="frontend">
-            #frontend
-        </button>
-
-        <button class="filter-chip" data-filter="ux">
-            #ux
-        </button>
-
-        <button class="filter-chip" data-filter="attendance">
-            #attendance
-        </button>
-
-        <button class="filter-chip" data-filter="career">
-            #career
-        </button>
-    </nav>
-
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="components/create-chirp.css" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Document</title>
+		<script defer src="components/create-chirp.js"></script>
+	</head>
+	<body>
+		<div class="for-a-loader" id="for-a-loader"></div>
+		<button
+			id="open-chirp-form-button"
+			class="submit_button open-chirp-form"
+		>
+			Post
+		</button>
+		<div class="gray-overlay hidden" id="gray-overlay">
+			<form class="chirp-form hidden" id="chirp-form">
+				<div class="chirp-form__top" id="chirp-form__top">
+					<div
+						class="chirp-form__username-and-image"
+						id="chirp-form__username-and-image"
+					>
+						<label
+							><img
+								class="username"
+								src="src/images/user-icon.svg"
+								alt="an image respresentig a user icon"
+							/>
+							<input
+								id="update-username"
+								name="myImage"
+								type="file"
+								accept="image/*"
+							/>
+						</label>
+						<label class="hidden" for="author"
+							>Display name,optional</label
+						>
+						<input
+							id="author"
+							name="author_name"
+							placeholder="Your name"
+						/>
+					</div>
+					<button
+						type="reset"
+						class="chirp-form__close"
+						id="chirp-form__close"
+					>
+						X
+					</button>
+				</div>
+				<label class="hidden" for="message"
+					>Message, obligatory field</label
+				>
+				<textarea
+					id="message"
+					name="content"
+					placeholder="What's happening?"
+					required
+					maxlength="280"
+				></textarea>
+				<hr />
+				<div
+					id="chirp-form__tag-mood-and-post"
+					class="chirp-form__tag-mood-and-post"
+				>
+					<label class="hidden" for="tag">Tag, optional</label>
+					<input id="tag" name="tag" placeholder="#tag" />
+					<label class="hidden" for="sentiment"
+						>Select your mood, optional</label
+					>
+					<select placeholder="mood" id="sentiment" name="sentiment">
+						<option value="mood" disabled hidden selected>
+							Mood
+						</option>
+						<option value="Positive">positive</option>
+						<option value="Negative">negative</option>
+						<option value="Neutral">neutral</option>
+						<option value="Chaotic">chaotic</option>
+					</select>
+					<button
+						id="submit_button"
+						class="submit_button"
+						type="submit"
+					>
+						Post
+					</button>
+				</div>
+			</form>
+		</div>
+	</body>
 </html>
