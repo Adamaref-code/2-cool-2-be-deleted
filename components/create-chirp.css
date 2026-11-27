@@ -1,0 +1,248 @@
+/* Rita works on this*/
+body,
+html {
+	margin: 0;
+	padding: 0;
+}
+.chirp-form {
+	font-family:
+		'SF-Pro-Display-Regular.otf', Verdana, Geneva, Tahoma, sans-serif;
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 20%;
+	left: 13%;
+	height: fit-content;
+	width: 70vw;
+	background-color: #f8f8f8;
+	padding: 1.7vw;
+	box-shadow: 2px 0px 5px 2px rgba(33, 32, 32, 0.251);
+	border-radius: 20px;
+}
+
+.hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+@font-face {
+	font-family: 'SF-Pro-Display-Regular.otf';
+	src: url(/src/fonts/SF-Pro-Display-Regular.otf);
+}
+
+input,
+textarea,
+label,
+button,
+input::placeholder {
+	font-family:
+		'SF-Pro-Display-Regular.otf', Verdana, Geneva, Tahoma, sans-serif;
+}
+.anonymous {
+	font-family:
+		'SF-Pro-Display-Regular.otf', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.chirp-form__top {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5vw;
+}
+
+.chirp-form__close {
+	border: none;
+	background-color: transparent;
+	font-size: 1rem;
+	color: rgba(72, 69, 69, 0.746);
+}
+
+.chirp-form__username-and-image {
+	background-color: #ebeced;
+	border-radius: 26px;
+	width: 50vw;
+	display: flex;
+	align-items: center;
+	height: 11vw;
+	gap: 3vw;
+}
+
+.username {
+	margin-left: 0;
+	height: 11vw;
+	color: red;
+}
+#author {
+	height: 10vw;
+	padding: 0;
+	margin: 0;
+	width: 20vw;
+}
+
+.cursor {
+	animation-name: 'cursor-blinking';
+	animation-duration: 1s;
+}
+
+@keyframes cursor-blinking {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+input,
+textarea {
+	border: none;
+	margin: 2vw;
+	background-color: transparent;
+	resize: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+	outline: none;
+}
+
+hr {
+	border: 0.5px solid rgb(202, 197, 197);
+	width: 100%;
+}
+
+.chirp-form__tag-mood-and-post {
+	display: flex;
+	justify-content: left;
+	gap: 0;
+}
+
+.submit_button {
+	font-size: 0.8rem;
+	background-color: #dee908;
+	border: none;
+	border-radius: 20px;
+	padding: 2vw;
+	width: 20vw;
+	color: rgb(35, 34, 34);
+	margin-left: 6vw;
+	font-family:
+		'SF-Pro-Display-Regular.otf', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#tag {
+	font-size: 0.8rem;
+	width: 15vw;
+}
+
+#sentiment {
+	font-size: 0.8rem;
+	width: 24vw;
+	background: #e6eef2;
+	background: linear-gradient(
+		180deg,
+		rgb(249, 249, 249) 0%,
+		rgba(223, 223, 224, 0.52) 50%,
+		rgba(184, 184, 186, 0.565) 100%
+	);
+	border: none;
+	border-radius: 20px;
+	padding: 2vw 5vw;
+	text-align: left;
+}
+#sentiment:open {
+	border-radius: 0px;
+}
+select,
+::picker(select) {
+	font-size: 0.8rem;
+	font-family:
+		'SF-Pro-Display-Regular.otf', Verdana, Geneva, Tahoma, sans-serif;
+	appearance: base-select;
+	border: none;
+	border-radius: 0 0 14px 14px;
+	background: #e6eef2;
+	background: linear-gradient(
+		180deg,
+		rgba(184, 184, 186, 0.565) 0%,
+		rgba(223, 223, 224, 0.52) 50%,
+		rgb(249, 249, 249) 100%
+	);
+	position-area: bottom;
+	position-try-fallbacks: none;
+}
+select::picker-icon {
+	color: #948e8e;
+}
+
+.gray-overlay {
+	background-color: #bcbec062;
+	height: 1000vw;
+	width: 100vw;
+}
+
+.loader-icon {
+	height: 20vw;
+	position: absolute;
+	top: 20%;
+	animation-name: 'spinningLoader';
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+	z-index: 1000;
+}
+
+@keyframes spinningLoader {
+	from {
+		transform: rotate(360deg);
+	}
+
+	to {
+		transform: rotate(0deg);
+	}
+}
+.for-a-loader {
+	display: flex;
+	justify-content: center;
+}
+.error {
+	position: absolute;
+	bottom: 0px;
+	background-color: #ff5656;
+	border-radius: 17px;
+	color: #eddede;
+	padding: 2.7vw;
+	font-family:
+		'SF-Pro-Display-Regular.otf', Verdana, Geneva, Tahoma, sans-serif;
+}
+/*
+Hide the original input
+*/
+label input {
+	display: none;
+}
+
+/*
+The label acts as a button, so we style it accordingly
+*/
+label {
+	padding: 0;
+	background: transparent;
+	font-family:
+		'SF-Pro-Display-Regular.otf', Verdana, Geneva, Tahoma, sans-serif;
+	color: #fff;
+	cursor: pointer;
+	/*
+  No text-selection on buttons
+  */
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
