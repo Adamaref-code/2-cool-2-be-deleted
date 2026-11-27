@@ -10,7 +10,10 @@
 	</head>
 	<body>
 		<div class="for-a-loader" id="for-a-loader"></div>
-		<button id="open-chirp-form-button" class="submit_button open-chirp-form">
+		<button
+			id="open-chirp-form-button"
+			class="submit_button open-chirp-form"
+		>
 			Post
 		</button>
 		<div class="gray-overlay hidden" id="gray-overlay">
@@ -33,14 +36,26 @@
 								accept="image/*"
 							/>
 						</label>
-						<label class="hidden" for="author">Display name,optional</label>
-						<input id="author" name="author_name" placeholder="Your name" />
+						<label class="hidden" for="author"
+							>Display name,optional</label
+						>
+						<input
+							id="author"
+							name="author_name"
+							placeholder="Your name"
+						/>
 					</div>
-					<button type="reset" class="chirp-form__close" id="chirp-form__close">
+					<button
+						type="reset"
+						class="chirp-form__close"
+						id="chirp-form__close"
+					>
 						X
 					</button>
 				</div>
-				<label class="hidden" for="message">Message, obligatory field</label>
+				<label class="hidden" for="message"
+					>Message, obligatory field</label
+				>
 				<textarea
 					id="message"
 					name="content"
@@ -59,13 +74,19 @@
 						>Select your mood, optional</label
 					>
 					<select placeholder="mood" id="sentiment" name="sentiment">
-						<option value="mood" disabled hidden selected>Mood</option>
+						<option value="mood" disabled hidden selected>
+							Mood
+						</option>
 						<option value="Positive">positive</option>
 						<option value="Negative">negative</option>
 						<option value="Neutral">neutral</option>
 						<option value="Chaotic">chaotic</option>
 					</select>
-					<button id="submit_button" class="submit_button" type="submit">
+					<button
+						id="submit_button"
+						class="submit_button"
+						type="submit"
+					>
 						Post
 					</button>
 				</div>
