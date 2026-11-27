@@ -302,3 +302,31 @@ textarea.input {
     background: var(--color-primary);
     color: white;
 }
+
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+}
+
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-chip {
+  border: none;
+  border-radius: 999px;
+  background: #ececec;
+  color: var(--color-text);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.2s;
+}
+
+.filter-chip.active {
+  background: var(--color-primary);
+  color: white;
+}
